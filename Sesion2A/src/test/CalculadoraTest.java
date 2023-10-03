@@ -1,5 +1,6 @@
 package test;
 
+ 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;
@@ -8,7 +9,12 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import pkg.Calculadora;
+
 class CalculadoraTest {
+	
+	private int value1;
+	private int value2;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -20,30 +26,42 @@ class CalculadoraTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
+		System.out.println("set up");
+		value1=5;
+		value2=5;
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
+		System.out.println("after each");
 	}
 
 	@Test
 	void testSuma() {
-		fail("Not yet implemented");
+		int expected=10;
+		int actual=Calculadora.suma(value1,value2);
+		assertEquals(expected,actual);
 	}
 
 	@Test
 	void testResta() {
-		fail("Not yet implemented");
+		int expected=0;
+		int actual=Calculadora.resta(value1,value2);
+		assertEquals(expected,actual);
 	}
 
 	@Test
 	void testMultiplica() {
-		fail("Not yet implemented");
+		int expected=25;
+		int actual=Calculadora.multiplica(value1,value2);
+		assertEquals(expected,actual);
 	}
 
 	@Test
 	void testDivide() {
-		fail("Not yet implemented");
+		int expected=1;
+		int actual=Calculadora.divide(value1,value2);
+		assertEquals(expected,actual);
 	}
 
 }
